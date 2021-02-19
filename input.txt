@@ -1,24 +1,24 @@
 begin
-bill gates
-Melinda Gates
-Jennifer katharine gates
+Father name 1
+Mother name 1
+Daughter name 1
 begin
-William H Macy
-Felicity Huffman
-Sofia Grace Macy
+Father name 2
+Mother name 2
+Daughter name 2
 begin
-Howard Deutch
-Lea Thompson
-Zoey Deutch
+Father name 3
+Mother name 3
+Daughter name 3
 begin
-Sting
-Trudie Styler
-Mickey Sumner
+Father name 4
+Mother name 4
+Daughter name 4
 begin
-Lil Wayne
-Antonia Wright
-Reginae Carter
+Father name 5
+Mother name 5
+Daughter name 5
 begin
-Elvis Presley color
-Priscilla Presley
-Lisa Marie Presley
+Father name 6
+Mother name 6
+Daughter name 6
