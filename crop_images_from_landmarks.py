@@ -15,12 +15,10 @@ from modules.utils import (set_memory_growth, load_yaml,
                            draw_bbox_landm, pad_input_image, recover_pad_output)
 from lib.Image_creator import process_func
 
-'''Creates the folder structure'''
-
 rootdir = os.getcwd()+'\\downloads\\'
 outputpath = os.getcwd()+'\\output\\'
 
-
+'''Creates the folder structure'''
 def create_folder_structure(rootdir, outputpath):
     for subdir, dirs, files in os.walk(rootdir):
         structure = os.path.join(outputpath, subdir[len(rootdir):])
@@ -29,8 +27,6 @@ def create_folder_structure(rootdir, outputpath):
 
 
 '''Processes all the images to crop'''
-
-
 def parse_images_to_crop(rootdir, outputpath):
     for subdir, dirs, files in os.walk(rootdir):
         landmarks = load_landmarks_in_subdirectory(subdir)
@@ -50,8 +46,6 @@ def parse_images_to_crop(rootdir, outputpath):
 
 
 '''Loads the json landmark files'''
-
-
 def load_landmarks_in_subdirectory(subdir):
     print(subdir)
     if(os.path.isfile(os.path.join(subdir, 'landmarks.json'))):
@@ -60,8 +54,6 @@ def load_landmarks_in_subdirectory(subdir):
 
 
 '''Processes, crops and copies one images resulting into perheaps multiple faces'''
-
-
 def process_crop_copy_all_faces(file, landmarks, subdir, rootdir, outputpath):
     # Name of the image without the extension to load the landmarks
     key = file.replace('.jpg', '')

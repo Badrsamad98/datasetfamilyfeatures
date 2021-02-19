@@ -26,12 +26,10 @@ flags.DEFINE_float('down_scale_factor', 1.0, 'down-scale factor for inputs')
 flags.DEFINE_boolean('webcam', False, 'get image source from webcam or not')
 
 
-'''Creates the folder structure'''
-
 rootdir = os.getcwd()+'\\downloads\\'
 outputpath = os.getcwd()+'\\landmarks\\'
 
-
+'''Creates the folder structure'''
 def create_folder_structure(rootdir, outputpath):
     for subdir, dirs, files in os.walk(rootdir):
         structure = os.path.join(outputpath, subdir[len(rootdir):])
@@ -40,8 +38,6 @@ def create_folder_structure(rootdir, outputpath):
 
 
 '''Loads and trains the model'''
-
-
 def initialize():
     # init
     os.environ['TF_CPP_MIN_LOG_LEVEL'] = '3'
@@ -75,8 +71,6 @@ def initialize():
 
 
 '''Loops over all the image files to process them'''
-
-
 def create_images(rootdir, outputpath, model, cfg):
     for subdir, dirs, files in os.walk(rootdir):
         f = open(os.path.join(subdir, 'landmarks.json'), "w")
@@ -96,8 +90,6 @@ def create_images(rootdir, outputpath, model, cfg):
 
 
 '''Processes a single image'''
-
-
 def process_single_image(img_path, img_outputpath, model, cfg, data):
 
     if not os.path.exists(img_path):
@@ -133,8 +125,6 @@ def process_single_image(img_path, img_outputpath, model, cfg, data):
 
 
 '''Returns formatted json landmark data'''
-
-
 def get_json_landmark_data(data, img_outputpath, landmarks):
     # Image name without the extension
     image_name = os.path.split(img_outputpath)[1].replace('.jpg', '')
@@ -160,8 +150,6 @@ def get_json_landmark_data(data, img_outputpath, landmarks):
 
 
 '''Execute the script'''
-
-
 def main(_argv):
     create_folder_structure(rootdir, outputpath)
     model, cfg = initialize()

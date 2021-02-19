@@ -28,8 +28,6 @@ logging.basicConfig(level=logging.DEBUG)
 logger = logging.getLogger(__name__)
 
 '''Function that launches the script by reading the input and config files'''
-
-
 def launch_script():
     '''Configuration'''
     configFile = open('config.txt', 'r')
@@ -62,8 +60,6 @@ def launch_script():
 
 
 '''Searches for the images of a family composed of three family members, saves the images and the csv identification files'''
-
-
 def search_for_family_images(family, family_index, max_results=None, height=800, width=600):
     global REQUEST_URL
     for index, keywords in enumerate(family):
@@ -128,8 +124,6 @@ def search_for_family_images(family, family_index, max_results=None, height=800,
 
 
 '''Get token from search engine'''
-
-
 def get_token(keywords):
     params = {
         'q': keywords
@@ -151,8 +145,6 @@ def get_token(keywords):
 
 
 '''Creating the folder where to store the pictures of each individual of a family'''
-
-
 def create_images_folder_by_index(index, keywords, familyindex):
     # The folders containing the images
     SAVE_FOLDER = os.getcwd() + '/downoalds/' + '/Family_' + str(familyindex) + '/'
@@ -174,8 +166,6 @@ def create_images_folder_by_index(index, keywords, familyindex):
 
 
 '''Formatting the name of the file'''
-
-
 def file_name_formatter(keywords):
     words = keywords.rstrip().split(" ")
     result = ""
@@ -208,8 +198,6 @@ def get_images_by_images_links(family, index, imagelinks, folder_path, keywords)
 
 
 '''Save the image'''
-
-
 def save_image(folder_path, keywords, i, response):
     imagename = Path(folder_path + '/' +
                      file_name_formatter(keywords) + str(i+1) + '.jpg')
@@ -218,8 +206,6 @@ def save_image(folder_path, keywords, i, response):
 
 
 '''Create the CSV File that identifies each image'''
-
-
 def create_csv_identification_file(family, folder_path, index, i, keywords, imagelink):
     linkname = Path(folder_path + '/' +
                     file_name_formatter(keywords) + str(i+1) + '.csv')
